@@ -29,7 +29,7 @@ Capabilities vary by Windows version, Wi-Fi adapter, driver, permissions, and av
    ```powershell
    $expected = ((Get-Content .\WinWiFi-Security-Auditor-Setup.exe.sha256 -Raw) -split '\s+')[0]
    $actual = (Get-FileHash .\WinWiFi-Security-Auditor-Setup.exe -Algorithm SHA256).Hash.ToLowerInvariant()
-   if ($actual -ne $expected) { throw "Checksum mismatch �w^~)�t do not run this installer." }
+   if ($actual -ne $expected) { throw "Checksum mismatch. Do not run this installer." }
    "Checksum verified."
    ```
 
