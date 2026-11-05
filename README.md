@@ -1,6 +1,6 @@
 # WinWiFi Security Auditor
 
-Download the current Windows installer from the [latest release](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest).
+Download the current Windows installer from the [latest release](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest). If that page has no version yet, a release has not been published here.
 
 ## About
 
