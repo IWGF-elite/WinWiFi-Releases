@@ -75,6 +75,8 @@ Depending on which features an operator uses, the application can read or proces
 
 The product uses these details to display current observations, compare history, calculate findings, maintain an authorized audit workspace, and produce reports requested by the operator. Results depend on the adapter, driver, Windows permissions, network, and imported evidence available at the time.
 
+Recent Windows versions may require Windows Location consent to expose nearby Wi-Fi identifiers such as BSSIDs. WinWiFi uses that access to display and assess Wi-Fi observations. This build does not request a GPS position or calculate a precise physical location. Signal-survey room names are labels entered by the operator.
+
 ### Where information is stored and protected
 
 The native workspace database is stored in the Windows user profile at `%LOCALAPPDATA%\WinWiFi\winwifi_audit.db`. The embedded WebView2 dashboard also stores a local workspace mirror and preferences in that Windows user profile. The local bridge listens on the PC's loopback interface; it is not a WinWiFi cloud endpoint.
