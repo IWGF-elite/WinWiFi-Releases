@@ -55,7 +55,7 @@ Each release provides the Windows setup executable and a SHA-256 checksum file. 
 
 **Product:** WinWiFi Security Auditor
 
-**Publisher display name:** AldrenSystems
+**Publisher display name:** Aldren Systems
 
 **Current jurisdiction:** Pakistan; update if the publisher's legal establishment or markets change.
 **Privacy contact:** `aldrensystems@gmail.com`
@@ -111,7 +111,7 @@ The Windows app does not set browser cookies. WebView2 local storage is used for
 
 WinWiFi is a network administration tool and is not directed at children. It does not ask for a user's age.
 
-For privacy requests, contact `aldrensystems@gmail.com`. “AldrenSystems” is the publisher display name; the publisher should use the legal identity associated with its Partner Center account where Microsoft requires it.
+For privacy requests, contact `aldrensystems@gmail.com`. “Aldren Systems” is the publisher display name; the publisher should use the legal identity associated with its Partner Center account where Microsoft requires it.
 
 ### Changes to this policy
 
