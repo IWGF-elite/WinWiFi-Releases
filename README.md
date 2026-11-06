@@ -55,7 +55,7 @@ Each release provides the Windows setup executable and a SHA-256 checksum file. 
 
 **Product:** WinWiFi Security Auditor
 
-**Publisher display name:** Aldren Systems
+**Publisher display name:** AldrenSystems
 
 **Current jurisdiction:** Pakistan; update if the publisher's legal establishment or markets change.
 **Privacy contact:** `aldrensystems@gmail.com`
@@ -79,7 +79,9 @@ The product uses these details to display current observations, compare history,
 
 The native workspace database is stored in the Windows user profile at `%LOCALAPPDATA%\WinWiFi\winwifi_audit.db`. The embedded WebView2 dashboard also stores a local workspace mirror and preferences in that Windows user profile. The local bridge listens on the PC's loopback interface; it is not a WinWiFi cloud endpoint.
 
-The installed Windows app encrypts the SQLite workspace with authenticated ChaCha20-Poly1305 encryption. A random key is protected by Windows DPAPI for the current Windows account. The embedded dashboard encrypts WebView2 local workspace values before writing them to local storage. On an existing installation, the app migrates the plaintext database in place, compares every table's row count, checks database integrity, and retains a temporary recovery copy until the encrypted replacement passes verification. If migration validation fails, the original database is restored. Keep the Windows account protected and back up the database and its matching `winwifi_audit.key.dpapi` file together; DPAPI-protected data is tied to the Windows user profile and is not portable to another account by copying the database alone.
+Encrypted-storage builds encrypt the SQLite workspace with authenticated ChaCha20-Poly1305 encryption. A random key is protected by Windows DPAPI for the current Windows account. The embedded dashboard encrypts WebView2 local workspace values before writing them to local storage. On an existing installation, the app migrates the plaintext database in place, compares every table's row count, checks database integrity, and retains a temporary recovery copy until the encrypted replacement passes verification. If migration validation fails, the original database is restored. Keep the Windows account protected and back up the database and its matching `winwifi_audit.key.dpapi` file together; DPAPI-protected data is tied to the Windows user profile and is not portable to another account by copying the database alone.
+
+The encryption update has not yet been published as a new installer or Store package. Older installed versions may store workspace data in plaintext. Rewriting encrypted WebView values does not guarantee removal of previous plaintext from browser storage files or backups.
 
 This at-rest protection does not protect data while WinWiFi is running under your Windows account, from malware already running as that user or an administrator, from exported reports/captures, or from separate Windows and third-party records. Deleting workspace data is not a guarantee of forensic erasure from storage media, backups, or volume snapshots.
 
@@ -89,7 +91,7 @@ WinWiFi processes imported capture evidence locally and does not upload captures
 
 The current direct-download build checks the **GitHub Releases** service for application updates and may download a versioned installer and its SHA-256 checksum. GitHub receives the request and ordinary network metadata such as the public IP address, time, and requested release asset. The update request does not include Wi-Fi observations, LAN inventory, project contents, imported captures, or report contents. The app verifies an update against its published checksum before staging it.
 
-The application does not include an analytics or advertising service in the reviewed direct dependencies/source. Windows and Microsoft WebView2 provide operating-system and dashboard runtime functions. The direct installer may obtain the WebView2 runtime from Microsoft if it is not already present, depending on the installer build. A future Microsoft Store MSIX build must use Store-managed updates and must not apply the GitHub/Inno Setup updater over a Store installation.
+The application does not include an analytics or advertising service in the reviewed direct dependencies/source. Windows and Microsoft WebView2 provide operating-system and dashboard runtime functions. The direct installer may obtain the WebView2 runtime from Microsoft if it is not already present, depending on the installer build. Packaged builds open the Windows Store update view and block the GitHub/Inno Setup installer updater.
 
 When the operator chooses **Open router page**, Windows opens the gateway address in the default browser. That browser then communicates with the router; this is not a WinWiFi upload.
 
@@ -109,7 +111,7 @@ The Windows app does not set browser cookies. WebView2 local storage is used for
 
 WinWiFi is a network administration tool and is not directed at children. It does not ask for a user's age.
 
-For privacy requests, contact `aldrensystems@gmail.com`. “Aldren Systems” is the publisher display name; the publisher should use the legal identity associated with its Partner Center account where Microsoft requires it.
+For privacy requests, contact `aldrensystems@gmail.com`. “AldrenSystems” is the publisher display name; the publisher should use the legal identity associated with its Partner Center account where Microsoft requires it.
 
 ### Changes to this policy
 
