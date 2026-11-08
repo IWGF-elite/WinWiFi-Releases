@@ -6,7 +6,7 @@
 
 - **Direct-download installations:** use **Check for updates** at the bottom of the sidebar, or in **Settings & Lab → Application Updates**. A newer installer is downloaded and checked against its published SHA-256 before **Restart now** is offered. Approve the normal Windows administrator prompt to install it.
 - If an older version checks an obsolete release address or cannot find this update, close WinWiFi and run the latest installer once. Keep the existing installation folder. You do not need to uninstall or clear saved history. Subsequent compatible direct-download builds use this release channel.
-- **Microsoft Store installations:** update through Microsoft Store. The GitHub installer does not upgrade a Store MSIX. Version 3.0.10 here is a separate direct-download build; it does not alter the submitted Store 3.0.9 package.
+- **Microsoft Store installations:** update through Microsoft Store. The GitHub installer does not upgrade a Store MSIX. The releases here are separate direct-download builds; they do not alter the submitted Store 3.0.9 package.
 - The current installer is **unsigned**. Windows may display an unknown-publisher or SmartScreen warning. A matching SHA-256 checks the file against this release; it is not a code-signing certificate or a guarantee of publisher identity.
 ## About
 
@@ -46,7 +46,7 @@ Capabilities vary by Windows version, Wi-Fi adapter, driver, permissions, and av
 
 - Windows 10 (version 19041 or later) or Windows 11, 64-bit
 - A working Wi-Fi adapter for live wireless discovery
-- The 3.0.10 installer includes the self-contained .NET runtime and Microsoft's signed offline WebView2 Runtime installer; no separate dashboard-runtime download is needed
+- The current installer includes self-contained .NET and Microsoft's signed WebView2 bootstrapper. Setup installs the dashboard runtime before launch when needed; internet is required if WebView2 is missing. Existing clients reuse the installed runtime.
 - Optional: Npcap plus a monitor-mode-capable adapter and driver for raw 802.11 capture
 
 The installer includes the app and its .NET runtime. Adapter capabilities differ across computers. LAN and capture features may also be limited by the local network, Windows permissions, and driver support.
@@ -89,7 +89,7 @@ The native workspace database is stored in the Windows user profile at `%LOCALAP
 
 Encrypted-storage builds encrypt the SQLite workspace with authenticated ChaCha20-Poly1305 encryption. A random key is protected by Windows DPAPI for the current Windows account. The embedded dashboard encrypts WebView2 local workspace values before writing them to local storage. On an existing installation, the app migrates the plaintext database in place, compares every table's row count, checks database integrity, and retains a temporary recovery copy until the encrypted replacement passes verification. If migration validation fails, the original database is restored. Keep the Windows account protected and back up the database and its matching `winwifi_audit.key.dpapi` file together; DPAPI-protected data is tied to the Windows user profile and is not portable to another account by copying the database alone.
 
-The encryption update has not yet been published as a new installer or Store package. Older installed versions may store workspace data in plaintext. Rewriting encrypted WebView values does not guarantee removal of previous plaintext from browser storage files or backups.
+Current direct-download releases include the encryption update. Older installed versions may store workspace data in plaintext. Microsoft Store availability depends on the published Store version; a package under certification is not a published update. Rewriting encrypted WebView values does not guarantee removal of previous plaintext from browser storage files or backups.
 
 This at-rest protection does not protect data while WinWiFi is running under your Windows account, from malware already running as that user or an administrator, from exported reports/captures, or from separate Windows and third-party records. Deleting workspace data is not a guarantee of forensic erasure from storage media, backups, or volume snapshots.
 
