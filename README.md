@@ -1,6 +1,6 @@
 # WinWiFi Security Auditor
 
-**Current direct-download version: 3.0.13.** [Download the Windows installer](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest/download/WinWiFi-Security-Auditor-Setup.exe) · [Release notes and checksum](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest)
+**Current direct-download version: 3.0.14.** [Download the Windows installer](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest/download/WinWiFi-Security-Auditor-Setup.exe) · [Release notes and checksum](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest)
 
 ## Updating an existing installation
 
