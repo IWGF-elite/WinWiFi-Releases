@@ -1,7 +1,13 @@
 # WinWiFi Security Auditor
 
-Download the current Windows installer from the [latest release](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest). If that page has no version yet, a release has not been published here.
+**Current direct-download version: 3.0.10.** [Download the Windows installer](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest/download/WinWiFi-Security-Auditor-Setup.exe) · [Release notes and checksum](https://github.com/IWGF-elite/WinWiFi-Releases/releases/latest)
 
+## Updating an existing installation
+
+- **Direct-download installations:** use **Check for updates** at the bottom of the sidebar, or in **Settings & Lab → Application Updates**. A newer installer is downloaded and checked against its published SHA-256 before **Restart now** is offered. Approve the normal Windows administrator prompt to install it.
+- If an older version checks an obsolete release address or cannot find this update, close WinWiFi and run the latest installer once. Keep the existing installation folder. You do not need to uninstall or clear saved history. Subsequent compatible direct-download builds use this release channel.
+- **Microsoft Store installations:** update through Microsoft Store. The GitHub installer does not upgrade a Store MSIX. Version 3.0.10 here is a separate direct-download build; it does not alter the submitted Store 3.0.9 package.
+- The current installer is **unsigned**. Windows may display an unknown-publisher or SmartScreen warning. A matching SHA-256 checks the file against this release; it is not a code-signing certificate or a guarantee of publisher identity.
 ## About
 
 WinWiFi Security Auditor is a Windows desktop tool for reviewing nearby Wi-Fi security settings and authorized local-network audit information. It is intended for network owners, IT administrators, and security auditors working with networks they own or have written permission to assess.
@@ -40,7 +46,7 @@ Capabilities vary by Windows version, Wi-Fi adapter, driver, permissions, and av
 
 - Windows 10 (version 19041 or later) or Windows 11, 64-bit
 - A working Wi-Fi adapter for live wireless discovery
-- Internet access during installation if Microsoft Edge WebView2 Runtime is not already installed
+- The 3.0.10 installer includes the self-contained .NET runtime and Microsoft's signed offline WebView2 Runtime installer; no separate dashboard-runtime download is needed
 - Optional: Npcap plus a monitor-mode-capable adapter and driver for raw 802.11 capture
 
 The installer includes the app and its .NET runtime. Adapter capabilities differ across computers. LAN and capture features may also be limited by the local network, Windows permissions, and driver support.
